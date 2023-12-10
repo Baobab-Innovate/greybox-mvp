@@ -16,7 +16,7 @@ const { chains, publicClient } = configureChains(
   [publicProvider()]
 );
 
-const connectors ={new InjectedConnector({chains})}
+const connectors = [new InjectedConnector({chains})]
 
 const appInfo = {
   appName: "Celo Composer",
