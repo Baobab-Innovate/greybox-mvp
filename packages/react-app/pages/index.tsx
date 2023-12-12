@@ -1,3 +1,4 @@
+import TransferCUSD from "@/utils/TransferCusd";
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
@@ -19,6 +20,7 @@ export default function Home() {
       {isConnected && (
         <div className="h2 text-center">Your address: {userAddress}</div>
       )}
+      <TransferCUSD />
     </div>
   );
 }
