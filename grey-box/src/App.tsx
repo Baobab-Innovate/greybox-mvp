@@ -1,4 +1,4 @@
-import PayTokenFunctionCall from "./dApps/PayTokenFunctionCall";
+// import PayTokenFunctionCall from "./dApps/PayTokenFunctionCall";
 import TransferCUSD from "./dApps/TransferCUSD";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
             }}
         >
             <TransferCUSD />
-            <PayTokenFunctionCall />
+      
         </div>
     );
 }
