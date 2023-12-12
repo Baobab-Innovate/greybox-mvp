@@ -6,6 +6,7 @@ const CUSD_ADDRESS = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 
 export default function TransferCUSD() {
   const [receiverAddress, setReceiverAddress] = useState("");
+  const [amount, setAmount] = useState("");
 
   async function transferCUSD() {
     if (window.ethereum) {
@@ -29,7 +30,7 @@ export default function TransferCUSD() {
 
         const calldata = iface.encodeFunctionData("transfer", [
           receiverAddress,
-          utils.parseEther("0.1"), // 10 cUSD - This amount is in wei
+          utils.parseEther(amount), // Convert user-specified amount to wei
         ]);
 
         // Send transaction to the injected wallet to be confirmed by the user.
@@ -62,6 +63,15 @@ export default function TransferCUSD() {
         id="transfer"
         value={receiverAddress}
         onChange={(e) => setReceiverAddress(e.target.value)}
+      />
+      <br />
+      <label htmlFor="amount">Enter Amount (cUSD)</label>
+      <br />
+      <input
+        type="text"
+        id="amount"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
       />
       <br />
       <button onClick={transferCUSD}>Transfer cUSD</button>
