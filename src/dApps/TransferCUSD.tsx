@@ -55,26 +55,89 @@ export default function TransferCUSD() {
   }
 
   return (
-    <main>
-      <label htmlFor="transfer">Enter Wallet Address</label>
-      <br />
-      <input
-        type="text"
-        id="transfer"
-        value={receiverAddress}
-        onChange={(e) => setReceiverAddress(e.target.value)}
-      />
-      <br />
-      <label htmlFor="amount">Enter Amount (cUSD)</label>
-      <br />
-      <input
-        type="text"
-        id="amount"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
-      <br />
-      <button onClick={transferCUSD}>Transfer cUSD</button>
+    <main style={{ width: "80%", padding: "20px" }}>
+      <p
+        style={{
+          fontSize: "24px",
+          textAlign: "center",
+          fontWeight: 600,
+          color: "#56575c",
+        }}
+      >
+        Send Money
+      </p>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <label htmlFor="transfer">Enter Wallet Address</label>
+
+          <input
+            type="text"
+            id="transfer"
+            value={receiverAddress}
+            style={{
+              background: "#d3d5e0",
+              padding: "10px",
+              outline: "none",
+              borderRadius: "10px",
+            }}
+            onChange={(e) => setReceiverAddress(e.target.value)}
+          />
+        </div>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <label htmlFor="amount">Enter Amount (cUSD)</label>
+
+          <input
+            type="text"
+            id="amount"
+            style={{
+              background: "#d3d5e0",
+              padding: "10px",
+              outline: "none",
+              borderRadius: "10px",
+            }}
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+        </div>{" "}
+        <button
+          style={{
+            marginTop: "20px",
+            width: "100%",
+            padding: "10px ",
+            background: "#6477e0",
+            color: "#fff",
+            border: "none",
+            fontSize: "16px",
+            borderRadius: "10px",
+            fontWeight: "600",
+          }}
+          onClick={transferCUSD}
+        >
+          Transfer cUSD
+        </button>
+      </div>
     </main>
   );
 }
